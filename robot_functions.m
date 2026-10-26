@@ -17,7 +17,7 @@ end
 function[G] = make_ring(n, k)
 
 % where s is the left-shifted identity matrix
-% cylic shift matrix S
+% cyclic shift matrix S
 srow1 = zeros(1,n);
 s = eye(n);
 S = vertcat(srow1, s);
@@ -25,8 +25,8 @@ S = vertcat(srow1, s);
 % matrix G
 G = zeros(n, n);
 
-for k = 1:k
-    G = G + mpower(s, k) + mpower(s', k);
+for j = 1:k
+    G = G + mpower(S, j) + mpower(S', j);
 end
 
 end
