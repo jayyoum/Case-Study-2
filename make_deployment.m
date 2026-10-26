@@ -25,6 +25,7 @@ function D = make_deployment(seed)
 %   reproduce D.G exactly, which makes a useful test of your code.
 %test
 % test 1
+%test2
 
 n = 150;
 
