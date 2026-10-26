@@ -18,9 +18,9 @@ function[G] = make_ring(n, k)
 
 % where s is the left-shifted identity matrix
 % cyclic shift matrix S
-srow1 = zeros(1,n);
-s = eye(n);
-S = vertcat(srow1, s);
+n = 100;
+Sidentity = eye(n,n)
+S = [Sidentity(1:n,2:n),Sidentity(1:n,1)]
 
 % matrix G
 G = zeros(n, n);
@@ -33,7 +33,4 @@ end
 
 %function[G] = make_disk()
 
-%n = 100;
-%srow1 = zeros(1,n);
-%s= eye(n);
-%s = vertcat(srow1, s);
+    
