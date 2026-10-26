@@ -24,6 +24,7 @@ function D = make_deployment(seed)
 %   Note: G is built from P0 and r. Your own make_disk(D.P0, D.r) should
 %   reproduce D.G exactly, which makes a useful test of your code.
 %test
+% test 1
 
 n = 150;
 
