@@ -16,6 +16,9 @@ end
 function[G] = make_ring(n, k)
 
 % where s is the left-shifted identity matrix
+srow1 = zeros(1,n);
+s = eye(n,n);
+S = vertcat(srow1, s);
 
 G = zeros(n, n);
 
