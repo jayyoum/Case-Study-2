@@ -34,6 +34,8 @@ one = ones(n,1);
 s = sum(P.^2,2); %sq every element, sum along rows
 
 delta = (s*one')+(one*s')-(2*(P*P'));
+G = delta < r^2; %idk
+G = G - diag(diag(G)); %take diagonal values of G, then make diagonal matrix w those values
 
 G = double(delta <= r^2);
 G(1:n+1:end) = 0;
