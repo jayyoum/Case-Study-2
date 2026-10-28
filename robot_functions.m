@@ -40,3 +40,4 @@ G(1:n+1:end) = 0; %set the diagonal of G to 0, avoiding self-connection.
 
 end
     
+%test matthew
