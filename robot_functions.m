@@ -31,6 +31,11 @@ end
 
 end
 
-%function[G] = make_disk()
+function[G] = make_disk(n)
+one = ones(n,1);
+s = sum(P.^2,2); %sq every element, sum along rows
 
+delta = (s*one')+(one*s')-(2*(P*P'));
+
+end
     
