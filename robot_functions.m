@@ -31,7 +31,7 @@ end
 
 end
 
-function[G] = make_disk(n)
+function[G] = make_disk(P,r)
 one = ones(n,1);
 s = sum(P.^2,2); %sq every element, sum along rows
 
