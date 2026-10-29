@@ -41,3 +41,24 @@ G(1:n+1:end) = 0; %set the diagonal of G to 0, avoiding self-connection.
 end
     
 %test matthew
+%%C ------ Protocols --------
+
+% Protocol A: neighbor averaging
+function W = makeWA(G)
+n = size(G,1);
+one = ones(n,1);
+d = G*one;
+D = diag(d);
+
+W = inv(eye(n)+D)*(eye(n)+G);
+end
+
+%Protocol B: step towards neighbors
+function W = makeWB(G)
+n = size(G,1);
+one = ones(n,1);
+d = (G*one);
+L = diag(d) - G; %Laplacian
+epsilon = 1/max(d);
+W = eye(n) - (epsilon)*L;
+end
