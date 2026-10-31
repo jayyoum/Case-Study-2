@@ -1,7 +1,8 @@
 function[G] = make_star(n)
 
-G = zeros(n, n);
-G(1, 2:n) = 1;
-G(2:n,  1) = 1;
+one = ones(n,1);
+e1 = eye(n,1);
+
+G = e1*one' + one*e1' - 2*(e1*e1');
 
 end
