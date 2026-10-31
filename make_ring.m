@@ -1,6 +1,6 @@
 function[G] = make_ring(n, k)
 
-Sidentity = eye(n)
+Sidentity = eye(n);
 S = [Sidentity(1:n,2:n), Sidentity(1:n,1)];
 
 % matrix G
