@@ -29,3 +29,19 @@ E2
 
 Prediction
 
+We predict protocol B will converge closer to the swarm's average position compared
+to protocol A, because B's convergence formula we derived shows us that it'll
+converge to the ordinary average of the initial positions, while A will converge
+towards the weighted average, where the degree of each robot plays a factor. We 
+also predict protocol A will converge faster because, on the star network, each
+peripheral robot moves halfway toward the hub at each step, while for protocol B,
+each peripheral robot moves only 1/99 of the way towards the hub because of the
+common step size determined by max degree.
+
+Post-experiment observations
+
+The results of experiment 2 were as we had predicted. B's distance from the avg
+was 0, since we had derived B would converge to the ordinary average. A's distance
+was higher, since it took into account the degree-weighted average. For rendezvous 
+time, A converged quicker, and B took a lot more to converge due to the small step
+size each peripheral robot was taking. 
