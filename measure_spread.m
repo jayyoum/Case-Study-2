@@ -11,7 +11,7 @@ delta = zeros(1, K+1);
 
 for k = 1:K+1
 
-delta(k) = sqrt(norm(C*X(:, k), 2) + norm(C*Y(:, k), 2));
+delta(k) = sqrt(norm(C*X(:, k), 2)^2 + norm(C*Y(:, k), 2)^2);
 
 end
 
