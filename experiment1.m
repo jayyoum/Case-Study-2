@@ -51,6 +51,7 @@ for i = 1:5
     semilogy(0:K, spreads{i});
 end
 
+set(gca, 'YScale', 'log');
 xlabel('Time step k');
 ylabel('Spread \delta[k]');
 title('Experiment 1 Rendezvous Visualization');
