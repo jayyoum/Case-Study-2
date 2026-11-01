@@ -65,12 +65,12 @@ diameters = zeros(4,1);
 
 for i = 1:4
 
-    [d, E, diam] = graph_stats(networks{i});
+[d, E, diam] = graph_stats(networks{i});
 
-    edge_counts(i) = E;
-    mean_degrees(i) = mean(d);
-    max_degrees(i) = max(d);
-    diameters(i) = diam;
+edge_counts(i) = E;
+mean_degrees(i) = mean(d);
+max_degrees(i) = max(d);
+diameters(i) = diam;
 
 end
 
@@ -87,9 +87,7 @@ hold on;
 
 for e = 1:length(i)
 
-    plot(P0([i(e), j(e)], 1), ...
-        P0([i(e), j(e)], 2), ...
-        '-', 'Color', [0.75 0.75 0.75]);
+plot(P0([i(e), j(e)], 1), P0([i(e), j(e)], 2),'-', 'Color', [0.75 0.75 0.75]);
 
 end
 

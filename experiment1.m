@@ -26,21 +26,20 @@ rendezvous_times = NaN(5,1);
 spreads = cell(5,1);
 
 for i = 1:5
+W = makeWA(networks{i});
 
-    W = makeWA(networks{i});
+X = simulate_linear(W,P0(:,1),K);
+Y = simulate_linear(W,P0(:,2),K);
 
-    X = simulate_linear(W,P0(:,1),K);
-    Y = simulate_linear(W,P0(:,2),K);
+delta = measure_spread(X,Y);
 
-    delta = measure_spread(X,Y);
+spreads{i} = delta;
 
-    spreads{i} = delta;
+idx = find(delta <= 0.01*delta(1),1,'first');
 
-    idx = find(delta <= 0.01*delta(1),1,'first');
-
-    if ~isempty(idx)
-        rendezvous_times(i) = idx - 1;
-    end
+if ~isempty(idx)
+rendezvous_times(i) = idx - 1;
+end
 
 end
 
@@ -48,7 +47,7 @@ figure;
 hold on;
 
 for i = 1:5
-    semilogy(0:K, spreads{i});
+semilogy(0:K, spreads{i});
 end
 
 set(gca, 'YScale', 'log');

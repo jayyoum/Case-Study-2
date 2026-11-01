@@ -24,3 +24,8 @@ was how much rendezvous time was decreased solely by increasing the radius of di
 0.4, from over 2700 rendezvous time at r = 2.1 to only around 330 for r = 2.5. Reflecting
 back, this significant decrease is somewhat to be expected as a 0.4 radius increase can 
 be significant in a 5x5 space.
+
+E2
+
+Prediction
+
