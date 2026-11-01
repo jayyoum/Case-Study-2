@@ -56,3 +56,33 @@ end
 results = table(names, error_A, error_B, 'VariableNames', {'Network','ErrorA','ErrorB'});
 
 disp(results);
+
+
+
+%T2 star protocol comparison
+centroid = mean(P0,1);
+
+distance_A = norm(predicted_A(2,:) - centroid);
+distance_B = norm(predicted_B(2,:) - centroid);
+
+fprintf('A distance from avg: %.6f\n', distance_A);
+fprintf('B distance from avg: %.6f\n', distance_B);
+
+K = 1000;
+
+WA = makeWA(G2);
+WB = makeWB(G2);
+
+XA = simulate_linear(WA,P0(:,1),K);
+YA = simulate_linear(WA,P0(:,2),K);
+XB = simulate_linear(WB,P0(:,1),K);
+YB = simulate_linear(WB,P0(:,2),K);
+
+delta_A = measure_spread(XA,YA);
+delta_B = measure_spread(XB,YB);
+
+idx_A = find(delta_A <= 0.01*delta_A(1), 1, 'first');
+idx_B = find(delta_B <= 0.01*delta_B(1), 1, 'first');
+
+fprintf('A rendezvous time: %d\n', idx_A-1);
+fprintf('B rendezvous time: %d\n', idx_B-1);
